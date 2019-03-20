@@ -22,11 +22,11 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter 
+@Setter
 @Entity(name= "user")
 public class User implements Serializable{
 	private static final long serialVersionUID=1L;
-	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +40,15 @@ public class User implements Serializable{
 	@Column(length = 100, nullable = false)
 	private String password;
 	
+		
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Column(length = 20, nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Role role;
