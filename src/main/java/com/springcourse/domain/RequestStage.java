@@ -44,6 +44,16 @@ public class RequestStage implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private RequestState state;
 	
+	
+	
+	public RequestState getState() {
+		return state;
+	}
+
+	public void setState(RequestState state) {
+		this.state = state;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="request_id", nullable = false)
 	private  Request request;

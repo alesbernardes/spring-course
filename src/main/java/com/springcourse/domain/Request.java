@@ -49,6 +49,23 @@ public class Request implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private RequestState state;
 	
+	
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public RequestState getState() {
+		return state;
+	}
+
+	public void setState(RequestState state) {
+		this.state = state;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "owner_id", nullable=false)
 	private User owner;
