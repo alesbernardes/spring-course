@@ -32,6 +32,7 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(length = 75, nullable = false)
 	private String name;
 	
@@ -41,7 +42,6 @@ public class User implements Serializable{
 	@Column(length = 100, nullable = false)
 	private String password;
 	
-
 	@Column(length = 20, nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Role role;
@@ -51,6 +51,8 @@ public class User implements Serializable{
 	
 	@OneToMany(mappedBy = "owner")
 	private List<RequestStage> stages = new ArrayList<RequestStage>();
+
+	
 
 	public Long getId() {
 		return id;
